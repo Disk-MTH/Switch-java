@@ -1,0 +1,11 @@
+{
+	"switch_mode": "system",
+
+	"java_versions": [
+		{
+			"8": "C:\\Program Files\\Java\\jdk-8",
+			"11": "C:\\Program Files\\Java\\jdk-11",
+			"18": "C:\\Program Files\\Java\\jdk-18"
+		}
+	]
+}
