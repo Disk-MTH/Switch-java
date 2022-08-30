@@ -1,5 +1,5 @@
 @echo off
-set /p java_version=The java version to set: 
+set /p java_version=Java version to set:
 
 if exist "%~dp0python" (
 	cd %~dp0python

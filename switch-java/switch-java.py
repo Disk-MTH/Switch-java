@@ -3,8 +3,6 @@ import os
 import sys
 import json
 import pathlib
-import re
-import subprocess
 
 if __name__ == '__main__':
     global config
@@ -65,7 +63,7 @@ if __name__ == '__main__':
                           "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                     sys.exit()
 
-        print("No version of java provided in the config matches your request. Ending program.")
+        print("No version of java provided in the config matches your request. Available versions are: " + str(config["java_versions"][0].keys()).replace("dict_keys([", "").replace("])", "").replace("\'", "\"") + ". Ending program.")
         sys.exit()
 
     elif config["switch_mode"] == "system":
@@ -103,7 +101,7 @@ if __name__ == '__main__':
                         "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                     sys.exit()
 
-        print("No version of java provided in the config matches your request. Ending program.")
+        print("No version of java provided in the config matches your request. Available versions are: " + str(config["java_versions"][0].keys()).replace("dict_keys([", "").replace("])", "").replace("\'", "\"") + ". Ending program.")
         sys.exit()
 
     else:
