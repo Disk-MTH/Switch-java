@@ -46,9 +46,10 @@ if __name__ == '__main__':
                         if regKey_name.lower() == "path":
                             path = ""
                             for i in range(len(regKey_value.split(";"))):
-                                if "java" not in regKey_value.split(";")[i].lower() \
+                                if ("java" not in regKey_value.split(";")[i].lower() or "switch-java" in regKey_value.split(";")[i].lower()) \
                                         and "jdk" not in regKey_value.split(";")[i].lower() \
                                         and "openjdk" not in regKey_value.split(";")[i].lower() \
+                                        and "jre" not in regKey_value.split(";")[i].lower() \
                                         and regKey_value.split(";")[i] != "":
                                     path += regKey_value.split(";")[i] + ";"
 
@@ -63,15 +64,48 @@ if __name__ == '__main__':
                     print("\nIf you have two success notifications above, then Java " + java_version + " is correctly set as user default. "
                           "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                     sys.exit()
+
         print("No version of java provided in the config matches your request. Ending program.")
         sys.exit()
+
     elif config["switch_mode"] == "system":
         for java_version, path_to_java in config["java_versions"][0].items():
             if java_version == sys.argv[1]:
-                #do something
-                sys.exit()
+                os.system("setx -m JAVA_HOME \"" + path_to_java + "\"")
+                try:
+                    i = 0
+                    while True:
+                        regKey_name, regKey_value, regKey_type = winreg.EnumValue(winreg.OpenKey(
+                            winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE),
+                            "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment"), i)
+
+                        if regKey_name.lower() == "path":
+                            path = ""
+                            for i in range(len(regKey_value.split(";"))):
+                                if ("java" not in regKey_value.split(";")[i].lower() or "switch-java" in regKey_value.split(";")[i].lower()) \
+                                        and "jdk" not in regKey_value.split(";")[i].lower() \
+                                        and "openjdk" not in regKey_value.split(";")[i].lower() \
+                                        and "jre" not in regKey_value.split(";")[i].lower() \
+                                        and regKey_value.split(";")[i] != "":
+                                    path += regKey_value.split(";")[i] + ";"
+
+                            os.system("setx -m Path \"" + path_to_java + "\\bin;" + path + "\"")
+                            print(
+                                "\nIf you have two success notifications above, then Java " + java_version + " is correctly set as user default. "
+                                "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
+                            sys.exit()
+
+                        i += 1
+                except WindowsError:
+                    os.system("setx -m Path \"" + path_to_java + "\\bin;")
+                    print(
+                        "\nIf you have two success notifications above, then Java " + java_version + " is correctly set as user default. "
+                        "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
+                    sys.exit()
+
         print("No version of java provided in the config matches your request. Ending program.")
         sys.exit()
+
     else:
         print("Incorrect switch_mode: its should be \"user\" or \"system\". Ending program.")
         sys.exit()
