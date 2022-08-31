@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
                                 os.system("setx Path \"" + path_to_java + "\\bin;" + path + "\"")
                                 print(
-                                    "\nIf you have three success notifications above (ore two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                                    "\nIf you have three success notifications above (or two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                                     "\nYou must restart the CMD to test with \"java -version\".")
                                 sys.exit()
 
@@ -70,7 +70,7 @@ if __name__ == '__main__':
                     except WindowsError:
                         os.system("setx Path \"" + path_to_java + "\\bin;\"")
                         print(
-                            "\nIf you have three success notifications above (ore two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                            "\nIf you have three success notifications above (or two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                             "\nYou must restart the CMD to test with \"java -version\".")
                         sys.exit()
 
@@ -171,7 +171,8 @@ if __name__ == '__main__':
                         i = 0
                         while True:
                             regKey_name, regKey_value, regKey_type = winreg.EnumValue(winreg.OpenKey(
-                                winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER), "Environment"), i)
+                                winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE),
+                                "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment"), i)
 
                             if regKey_name.lower() == "path":
                                 path = ""
