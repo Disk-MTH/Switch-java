@@ -52,14 +52,14 @@ if __name__ == '__main__':
                                     path += regKey_value.split(";")[i] + ";"
 
                             os.system("setx Path \"" + path_to_java + "\\bin;" + path + "\"")
-                            print("\nIf you have two success notifications above, then Java " + java_version + " is correctly set as user default. "
+                            print("\nIf you have two success notifications above, Java " + java_version + " is correctly set as user default. "
                                   "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                             sys.exit()
 
                         i += 1
                 except WindowsError:
-                    os.system("setx Path \"" + path_to_java + "\\bin;")
-                    print("\nIf you have two success notifications above, then Java " + java_version + " is correctly set as user default. "
+                    os.system("setx Path \"" + path_to_java + "\\bin;\"")
+                    print("\nIf you have two success notifications above, Java " + java_version + " is correctly set as user default. "
                           "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                     sys.exit()
 
@@ -89,15 +89,15 @@ if __name__ == '__main__':
 
                             os.system("setx -m Path \"" + path_to_java + "\\bin;" + path + "\"")
                             print(
-                                "\nIf you have two success notifications above, then Java " + java_version + " is correctly set as user default. "
+                                "\nIf you have two success notifications above, Java " + java_version + " is correctly set as user default. "
                                 "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                             sys.exit()
 
                         i += 1
                 except WindowsError:
-                    os.system("setx -m Path \"" + path_to_java + "\\bin;")
+                    os.system("setx -m Path \"" + path_to_java + "\\bin;\"")
                     print(
-                        "\nIf you have two success notifications above, then Java " + java_version + " is correctly set as user default. "
+                        "\nIf you have two success notifications above, Java " + java_version + " is correctly set as user default. "
                         "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                     sys.exit()
 
