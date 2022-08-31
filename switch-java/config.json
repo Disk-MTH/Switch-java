@@ -1,6 +1,13 @@
 {
     "switch_mode": "",
-    "java_versions": [
+    "jre_versions": [
+        {
+            "9": "C:\\Program Files\\Java\\jre-9",
+            "16": "C:\\Program Files\\Java\\jre-16",
+            "17": "C:\\Program Files\\Java\\jre-17"
+        }
+    ],
+    "jdk_versions": [
         {
             "8": "C:\\Program Files\\Java\\jdk-8",
             "11": "C:\\Program Files\\Java\\jdk-11",

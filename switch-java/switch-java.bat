@@ -1,9 +1,9 @@
 @echo off
-set /p java_version=Java version to set:
-
 if exist "%~dp0python" (
+    echo Launch with bundled python
 	cd %~dp0python
-	python.exe "%~dp0switch-java.py" %java_version%
+	python.exe "%~dp0switch-java.py"
 ) else (
-	python "%~dp0switch-java.py" %java_version%
+    echo Launch with OS python
+	python "%~dp0switch-java.py"
 )

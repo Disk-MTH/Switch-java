@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
     elif uninstall_mode == "system":
         if not ctypes.windll.shell32.IsUserAnAdmin() != 0:
-            print("You must run in administrator mode to be able to setup switch-java for the " + uninstall_mode)
+            print("You must run in administrator mode to be able to setup switch-java for the " + uninstall_mode + ".")
             os.system("pause")
             sys.exit()
 
