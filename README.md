@@ -10,7 +10,7 @@ This project was created to work under windows. It will not work on other OS as 
 
 ### Setup
 
-Using switch-java is very simple. Start by downloading the version that suits you in the [release tab](). You have the choice to have an embedded python environment or not. If you already have a python 3 on your system, it's not useful.
+Using switch-java is very simple. Start by downloading the version that suits you in the [release tab](https://github.com/Disk-MTH/Switch-java/releases). You have the choice to have an embedded python environment or not. If you already have a python 3 on your system, it's not useful.
 
 
 Warning, the installation must include the console launcher (To check type the "windows" key, then type "cmd" in the search window and press "enter". Once there 'command prompt launched, type "python", type "enter" and if python launches in 'command prompt, then it's good),
