@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
                                 os.system("setx Path \"" + path_to_java + "\\bin;" + path + "\"")
                                 print(
-                                    "\nIf you have three success notifications above (or two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                                    "\nIf you have success notifications above (or \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                                     "\nYou must restart the CMD to test with \"java -version\".")
                                 sys.exit()
 
@@ -71,7 +71,7 @@ if __name__ == '__main__':
                     except WindowsError:
                         os.system("setx Path \"" + path_to_java + "\\bin;\"")
                         print(
-                            "\nIf you have three success notifications above (or two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                            "\nIf you have success notifications above (or \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                             "\nYou must restart the CMD to test with \"java -version\".")
                         sys.exit()
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
 
                                 os.system("setx Path \"" + path_to_java + "\\bin;" + path + "\"")
                                 print(
-                                    "\nIf you have three success notifications above, Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                                    "\nIf you have success notifications above (or \"Missing key error\"), Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                                     "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                                 sys.exit()
 
@@ -111,7 +111,7 @@ if __name__ == '__main__':
                     except WindowsError:
                         os.system("setx Path \"" + path_to_java + "\\bin;\"")
                         print(
-                            "\nIf you have two success notifications above, Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                            "\nIf you have success notifications above (or \"Missing key error\"), Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                             "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                         sys.exit()
 
@@ -150,7 +150,7 @@ if __name__ == '__main__':
 
                                 os.system("setx -m Path \"" + path_to_java + "\\bin;" + path + "\"")
                                 print(
-                                    "\nIf you have three success notifications above (ore two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                                    "\nIf you have success notifications above (or \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                                     "\nYou must restart the CMD to test with \"java -version\".")
                                 sys.exit()
 
@@ -158,7 +158,7 @@ if __name__ == '__main__':
                     except WindowsError:
                         os.system("setx -m Path \"" + path_to_java + "\\bin;\"")
                         print(
-                            "\nIf you have three success notifications above (ore two and a \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                            "\nIf you have success notifications above (or \"Missing key error\"), Java (JRE) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                             "\nYou must restart the CMD to test with \"java -version\".")
                         sys.exit()
 
@@ -193,7 +193,7 @@ if __name__ == '__main__':
 
                                 os.system("setx -m Path \"" + path_to_java + "\\bin;" + path + "\"")
                                 print(
-                                    "\nIf you have three success notifications above, Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                                    "\nIf you have success notifications above (or \"Missing key error\"), Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                                     "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                                 sys.exit()
 
@@ -201,7 +201,7 @@ if __name__ == '__main__':
                     except WindowsError:
                         os.system("setx -m Path \"" + path_to_java + "\\bin;\"")
                         print(
-                            "\nIf you have two success notifications above, Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
+                            "\nIf you have success notifications above (or \"Missing key error\"), Java (JDK) " + java_version + " is correctly set as " + config["switch_mode"] + " default."
                             "\nYou must restart the CMD to test with \"java -version\" for JRE or \"javac -version\" for JDK.")
                         sys.exit()
 
