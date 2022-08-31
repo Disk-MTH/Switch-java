@@ -52,14 +52,14 @@ if __name__ == '__main__':
                         if "switch-java" not in regKey_value.split(";")[i].lower() and regKey_value.split(";")[i] != "":
                             path += regKey_value.split(";")[i] + ";"
 
-                    os.system("setx Path \"" + os.environ["USERPROFILE"] + "\\switch-java;" + os.environ["USERPROFILE"] + "\\switch-java\\clear_java;" + path + "\"")
+                    os.system("setx Path \"" + os.environ["USERPROFILE"] + "\\switch-java;" + os.environ["USERPROFILE"] + "\\switch-java\\clear-java;" + path + "\"")
                     print("\nIf you have a success notification above, \"Switch-java\" is correctly setup for " + setup_mode + ".")
                     os.system("pause")
                     sys.exit()
 
                 i += 1
         except WindowsError:
-            os.system("setx Path \"" + os.environ["USERPROFILE"] + "\\switch-java;" + os.environ["USERPROFILE"] + "\\switch-java\\clear_java;\"")
+            os.system("setx Path \"" + os.environ["USERPROFILE"] + "\\switch-java;" + os.environ["USERPROFILE"] + "\\switch-java\\clear-java;\"")
             print("\nIf you have a success notification above, \"Switch-java\" is correctly setup for " + setup_mode + ".")
             os.system("pause")
             sys.exit()
@@ -104,14 +104,14 @@ if __name__ == '__main__':
                         if "switch-java" not in regKey_value.split(";")[i].lower() and regKey_value.split(";")[i] != "":
                             path += regKey_value.split(";")[i] + ";"
 
-                    os.system("setx -m Path \"" + os.environ["PROGRAMFILES"] + "\\switch-java;" + os.environ["PROGRAMFILES"] + "\\switch-java\\clear_java;" + path + "\"")
+                    os.system("setx -m Path \"" + os.environ["PROGRAMFILES"] + "\\switch-java;" + os.environ["PROGRAMFILES"] + "\\switch-java\\clear-java;" + path + "\"")
                     print("\nIf you have a success notification above, \"Switch-java\" is correctly setup for " + setup_mode + ".")
                     os.system("pause")
                     sys.exit()
 
                 i += 1
         except WindowsError:
-            os.system("setx -m Path \"" + os.environ["PROGRAMFILES"] + "\\switch-java;" + os.environ["PROGRAMFILES"] + "\\switch-java\\clear_java;\"")
+            os.system("setx -m Path \"" + os.environ["PROGRAMFILES"] + "\\switch-java;" + os.environ["PROGRAMFILES"] + "\\switch-java\\clear-java;\"")
             print("\nIf you have a success notification above, \"Switch-java\" is correctly setup for " + setup_mode + ".")
             os.system("pause")
             sys.exit()
