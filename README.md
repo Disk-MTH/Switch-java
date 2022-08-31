@@ -20,10 +20,10 @@ Once the desired version is downloaded, unzip it, and modify the "[config.json](
 - switch_mode: Don't touch it yet. It will be automatically defined during setup. On the other hand, you can modify it later in order to change the mode of change java.
 
 
-- jre_versions: List all your java JRE version. The version identifier will be the one to type when you want to change Java and the associated value is the path to the installation of the Java version.
+- jre_versions: List all your java JRE version. The version identifier will be the one to type when you want to change Java and the associated value is the path to the installation of the Java version. /!\ Path separator must be "\\\\" or "/" but not "\\" | if you doesn't have JRE leave braces empty /!\
 
 
-- jdk_versions: List all your java JDK version. The version identifier will be the one to type when you want to change Java and the associated value is the path to the installation of the Java version.
+- jdk_versions: List all your java JDK version. The version identifier will be the one to type when you want to change Java and the associated value is the path to the installation of the Java version. /!\ Path separator must be "\\\\" or "/" but not "\\" | if you doesn't have JDK leave braces empty /!\
 
 
 Once your configuration is done, run the "[setup.bat](https://github.com/Disk-MTH/Switch-java/blob/master/switch-java/setup/setup.bat)" script by double-click on it (for "user" mode) or by right-click and selecting "Run as administrator" (for "system" mode). This script will automatically "install" the program either in "C:\Users\your_user\switch-java" for the "user" mode or in "C:\Program Files\switch-java" for the "system" mode.
