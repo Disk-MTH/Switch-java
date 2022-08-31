@@ -29,6 +29,7 @@ if __name__ == '__main__':
         print("Started copying \"switch-java\" files. It may take a while if you are using bundled python.")
         shutil.copytree(pathlib.Path(os.path.abspath(os.path.dirname(__file__)).replace("setup", "")), os.environ["USERPROFILE"] + "\\switch-java")
         shutil.rmtree(os.environ["USERPROFILE"] + "\\switch-java\\setup")
+        shutil.rmtree(os.environ["USERPROFILE"] + "\\switch-java\\uninstall")
         print("End of copying \"switch-java\" files")
 
         with open(os.environ["USERPROFILE"] + "\\switch-java\\config.json", "r+", encoding="utf-8") as config_file:
@@ -79,6 +80,7 @@ if __name__ == '__main__':
         shutil.copytree(pathlib.Path(os.path.abspath(os.path.dirname(__file__)).replace("setup", "")),
                         os.environ["PROGRAMFILES"] + "\\switch-java")
         shutil.rmtree(os.environ["PROGRAMFILES"] + "\\switch-java\\setup")
+        shutil.rmtree(os.environ["PROGRAMFILES"] + "\\switch-java\\uninstall")
         print("End of copying \"switch-java\" files")
 
         with open(os.environ["PROGRAMFILES"] + "\\switch-java\\config.json", "r+", encoding="utf-8") as config_file:
