@@ -32,14 +32,6 @@ if __name__ == '__main__':
         shutil.rmtree(os.environ["USERPROFILE"] + "\\switch-java\\uninstall")
         print("End of copying \"switch-java\" files")
 
-        with open(os.environ["USERPROFILE"] + "\\switch-java\\config.json", "r+", encoding="utf-8") as config_file:
-            content = json.load(config_file)
-            content["switch_mode"] = setup_mode
-            config_file.truncate(0)
-            config_file.seek(0)
-            json.dump(content, config_file, indent=4)
-        print("End of config setup.")
-
         try:
             i = 0
             while True:
@@ -82,14 +74,6 @@ if __name__ == '__main__':
         shutil.rmtree(os.environ["PROGRAMFILES"] + "\\switch-java\\setup")
         shutil.rmtree(os.environ["PROGRAMFILES"] + "\\switch-java\\uninstall")
         print("End of copying \"switch-java\" files")
-
-        with open(os.environ["PROGRAMFILES"] + "\\switch-java\\config.json", "r+", encoding="utf-8") as config_file:
-            content = json.load(config_file)
-            content["switch_mode"] = setup_mode
-            config_file.truncate(0)
-            config_file.seek(0)
-            json.dump(content, config_file, indent=4)
-        print("End of config setup.")
 
         try:
             i = 0
