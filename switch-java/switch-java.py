@@ -41,6 +41,7 @@ if __name__ == '__main__':
         if target_type == "jre":
             for java_version, path_to_java in config["jre_versions"][0].items():
                 if java_version == target_version:
+                    print("Run in " + config["switch_mode"] + " mode. Unable to set registry values to select Java version for execution when double-clicking a \".jar\" file")
                     os.system("REG delete \"HKEY_CURRENT_USER\Environment\" /F /V \"JAVA_HOME\"")
                     os.system("setx JRE_HOME \"" + path_to_java + "\"")
                     try:
@@ -80,6 +81,7 @@ if __name__ == '__main__':
         else:
             for java_version, path_to_java in config["jdk_versions"][0].items():
                 if java_version == target_version:
+                    print("Run in " + config["switch_mode"] + " mode. Unable to set registry values to select Java version for execution when double-clicking a \".jar\" file")
                     os.system("setx JRE_HOME \"" + path_to_java + "\"")
                     os.system("setx JAVA_HOME \"" + path_to_java + "\"")
                     try:
@@ -125,6 +127,8 @@ if __name__ == '__main__':
             for java_version, path_to_java in config["jre_versions"][0].items():
                 if java_version == target_version:
                     os.system("REG delete \"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment\" /F /V \"JAVA_HOME\"")
+                    os.system("REG add \"HKEY_CLASSES_ROOT\jarfile\shell\open\command\" /F /D \"\\\"" + path_to_java + "\\bin\\javaw.exe\\\" -jar \\\"%1\\\" %*\"")
+                    os.system("REG add \"HKEY_CLASSES_ROOT\.jar\" /F /D \"jarfile\"")
                     os.system("setx -m JRE_HOME \"" + path_to_java + "\"")
                     try:
                         i = 0
@@ -165,6 +169,8 @@ if __name__ == '__main__':
         else:
             for java_version, path_to_java in config["jdk_versions"][0].items():
                 if java_version == target_version:
+                    os.system("REG add \"HKEY_CLASSES_ROOT\jarfile\shell\open\command\" /F /D \"\\\"" + path_to_java + "\\bin\\javaw.exe\\\" -jar \\\"%1\\\" %*\"")
+                    os.system("REG add \"HKEY_CLASSES_ROOT\.jar\" /F /D \"jarfile\"")
                     os.system("setx -m JRE_HOME \"" + path_to_java + "\"")
                     os.system("setx -m JAVA_HOME \"" + path_to_java + "\"")
                     try:

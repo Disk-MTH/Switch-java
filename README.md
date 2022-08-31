@@ -40,6 +40,8 @@ If you have already defined environment variables for Java, you can automaticall
 
 To switch version of Java, you must execute the command ``switch-java`` in a command prompt (normal for "user" mode and administrator for "system" mode), then give your type of Java ("jre" or "jdk") and finally give the version to define (the list of available versions will be given to you in the console and it corresponds to that defined in the config).
 
+/!\ "user" mode does not allow setting registry key values to select which java version to run when double-clicking a ".jar" file. It's a limitation of windows and as far as I know, I can't change it.
+
 ### Uninstall
 
 If you don't have it/no longer download the zip of the latest release (with embedded python or not), unzip it, and run the "uninstall.bat" script by double-click on it (for "user" mode) or by right-click and selecting "Run as administrator" (for "system" mode).
